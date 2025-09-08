@@ -21,7 +21,7 @@ def main():
     args = ap.parse_args()
 
     pack = np.load(args.weights, allow_pickle=True)
-    env = FlappyEnv(Config())
+    env = FlappyEnv(Config(pipe_gap=250))
 
     for ep in range(args.episodes):
         obs, _ = env.reset()
